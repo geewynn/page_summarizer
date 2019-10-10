@@ -11,11 +11,12 @@ app = Flask(__name__)
 
 
 @app.route('/api/summarize', methods=['POST', 'GET'])
-def test():
+def get_url():
     if request.method == 'POST':
-        content = request.json()
-        print(content)
-        return jsonify(content), 200
+        url = request.json['theUrl']
+        #print(content)
+        return jsonify(url), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5000)
