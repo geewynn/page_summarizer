@@ -11,7 +11,7 @@
 
 ## INTRODUCTION
 This task involves: (1) developing a model that generates the abstractive summary of a Page or an Article.
-                          (2) creating an API for a function that receives the url of an article and returns the text in the url.
+                                (2) creating an API for a function that receives the url of an article and returns the text in the url.
                      
 ## GETTING STARTED 
  
@@ -52,22 +52,11 @@ from bs4 import BeautifulSoup
 ### Page Summarizer
 
 ```
-# After importing the necessary libraries, read the file/article text that is to be summarized
+# After importing the necessary libraries, read the file/article text that is to be summarized and perform Data Wrangling on it
 file = open("mayowa.txt","r") 
 data=file.readlines() 
 file.close()
 ```
-```
-# Next, perform Data Cleansing, that is lowering the case of the input, removing the contents of [] then remove 's and fetch only ascii characters
-    newString = text.lower()
-    newString = re.sub("[\(\[].*?[\)\]]", "", newString)
-    newString = re.sub("'s","",newString)
-    newString = re.sub("[^'0-9.a-zA-Z]", " ", newString)
-    tokens=newString.split()
-    tokens = (" ".join(tokens)).strip()
-    return tokens
-```
-
 ```
 #Next, call the above function and define the word2vec model to be used
 model_w2v = gensim.models.Word2Vec(
@@ -139,3 +128,7 @@ print(summary)
 ```
 
 ## CONCLUSION
+To summarize the article, please make a POST request to the /api/summarize endpoint, use the format {"theUrl": "the URL of the article"}"""}
+
+### Hosted on heroku @ https://summarizerheroku.herokuapp.com and on git @ 
+https://git.heroku.com/summarizerheroku.git 
