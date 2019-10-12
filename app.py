@@ -3,7 +3,7 @@
 import pickle as p
 import traceback
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from flask_cors import CORS
 
 # loading the model
@@ -12,6 +12,10 @@ model = p.load(open(summarizer, 'rb'))
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route('/')
+def homepage():
+    return render_template('index.html')
 
 
 @app.route('/api/summarize', methods=['POST', 'GET'])
