@@ -10,13 +10,13 @@ Original file is located at
 import requests
 from bs4 import BeautifulSoup
 
+
 def read_content():  
     """
-    
     :returns: text-> blah
     :rtype: string
-    
     """
+
     url = "https://en.wikipedia.org/wiki/Machine_learning"
     response = requests.get(url)
     html = response.content
