@@ -130,5 +130,5 @@ print(summary)
 ## CONCLUSION
 To summarize the article, please make a POST request to the /api/summarize endpoint, use the format {"theUrl": "the URL of the article"}"""}
 
-### Hosted on heroku @ https://summarizerheroku.herokuapp.com and on git @ 
+### Hosted on heroku @ https://pagesum.herokuapp.com/and on git @ 
 https://git.heroku.com/summarizerheroku.git 
