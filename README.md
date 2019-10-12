@@ -52,13 +52,13 @@ from bs4 import BeautifulSoup
 ### Page Summarizer
 
 ```
-# After importing the necessary libraries, read the file/article text that is to be summarized and perform Data Wrangling on it
+# First read the file/article text that is to be summarized and perform Data Wrangling on it
 file = open("mayowa.txt","r") 
 data=file.readlines() 
 file.close()
 ```
 ```
-#Next, call the above function and define the word2vec model to be used
+#Next, define the "word2vec" model to be used
 model_w2v = gensim.models.Word2Vec(
             tokenized_text,
             size=200, # desired no. of features/independent variables 
@@ -119,7 +119,7 @@ def get_url():
 ```
 ### OUTPUT
 ```
-#extract top 15 sentences of the text
+#To extract a summarized text in 15 sentences
 num=15
 summary=''
 for i in range(num):
